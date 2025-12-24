@@ -9,8 +9,6 @@ sites:
     url: https://cdn.isitzoe.dev
   - name: Hack Club Wrapped
     url: https://wrapped.isitzoe.dev
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
 
 status-website:
   cname: status.isitzoe.dev
@@ -18,7 +16,7 @@ status-website:
   name: Uptime
   themeUrl: https://status.isitzoe.dev/theme.css
   introTitle: "**Hii!** :3 this is the status page for all my services."
-  introMessage: "It uses GitHub Actions and Upptime to monitor the status of my websites and APIs. Extremely cool if you ask me :D Btw, if you notice any issues, please feel free to reach out to me!"
+  introMessage: "It uses GitHub Actions to monitor the status of my websites and APIs. Extremely cool if you ask me! :D Btw, if you notice any issues, please feel free to reach out to me!"
   navbar:
     - title: Status
       href: /
