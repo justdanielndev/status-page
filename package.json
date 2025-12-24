@@ -1,6 +1,6 @@
 {
   "name": "@justdanielndev/status-page",
-  "version": "1.17.0",
+  "version": "1.18.0",
   "description": "Upptime status page website",
   "main": "dist/index.js",
   "scripts": {
