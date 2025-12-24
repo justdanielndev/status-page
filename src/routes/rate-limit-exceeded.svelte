@@ -79,7 +79,7 @@
     font: inherit;
     padding: 0.5rem 1rem;
     border: 0.1rem solid rgba(0, 0, 0, 0.25);
-    border-radius: 0.2rem;
+    border-radius: 0.8rem;
   }
   input {
     width: 15rem;

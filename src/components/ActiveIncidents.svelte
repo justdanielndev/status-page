@@ -40,7 +40,9 @@
 </script>
 
 {#if !incidents.length && !loading}
-  <article class="up">✅ &nbsp; {config.i18n.allSystemsOperational}</article>
+  <article class="up"><svg xmlns="http://www.w3.org/2000/svg" width="1.6em" height="1.6em" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM10.2426 14.4142L17.3137 7.34315L18.7279 8.75736L10.2426 17.2426L6 13L7.41421 11.5858L10.2426 14.4142Z" fill="#B0DCA2FF"/>
+</svg>&nbsp; {config.i18n.allSystemsOperational}</article>
 {/if}
 
 <section>
@@ -73,7 +75,12 @@
 </section>
 
 <style>
-  section {
-    margin-bottom: 2rem;
-  }
-</style>
+   section {
+     margin-bottom: 2rem;
+   }
+   article.up {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+   }
+ </style>

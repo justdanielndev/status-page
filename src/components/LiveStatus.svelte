@@ -18,6 +18,37 @@
   let form = null;
 
   let selected = "week";
+  let brokenIcons = new Set();
+
+  const handleIconLoad = (event) => {
+    const img = event.target;
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    let hasContent = false;
+    
+    for (let i = 3; i < data.length; i += 4) {
+      if (data[i] > 200) {
+        hasContent = true;
+        break;
+      }
+    }
+    
+    if (!hasContent) {
+      brokenIcons.add(img.src);
+      brokenIcons = brokenIcons;
+    }
+  };
+
+  const handleIconError = (event) => {
+    brokenIcons.add(event.target.src);
+    brokenIcons = brokenIcons;
+  };
 
   onMount(async () => {
     try {
@@ -112,9 +143,11 @@
             : ""
         }.png`}')"
         ><h4>
-          <img class="icon" alt="" src={site.icon} />
-          <a href={`${config.path}/history/${site.slug}`}>{site.name}</a>
-        </h4>
+           {#if !brokenIcons.has(site.icon)}
+             <img class="icon" alt="" src={site.icon} on:load={handleIconLoad} on:error={handleIconError} />
+           {/if}
+           <a href={`${config.path}/history/${site.slug}`}>{site.name}</a>
+         </h4>
         <div>
           {@html config.i18n.overallUptime.split("$UPTIME")[0]}
           <span class="data"
@@ -185,6 +218,6 @@
   }
   .data {
     padding: 0.15rem 0.25rem;
-    border-radius: 0.2rem;
+    border-radius: 0.8rem;
   }
 </style>

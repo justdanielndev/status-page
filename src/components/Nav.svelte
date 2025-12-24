@@ -9,7 +9,7 @@
       <div>
         <a href={config["status-website"].logoHref || config.path} class="logo">
           {#if config["status-website"] && !config["status-website"].hideNavLogo}
-            <img alt="" src={config["status-website"].logoUrl} />
+            <img width="27" height="27" alt="" src={config["status-website"].logoUrl} />
           {/if}
           {#if config["status-website"] && !config["status-website"].hideNavTitle}
             <div>{config["status-website"].name}</div>
@@ -78,7 +78,6 @@
   .logo img {
     margin-right: 1rem;
     height: 3rem;
-    border-radius: 0.2rem;
   }
   .container {
     display: flex;

@@ -21,7 +21,7 @@
   a.error-button {
     font: inherit;
     padding: 0.5rem 1rem;
-    border-radius: 0.2rem;
+    border-radius: 0.8rem;
     text-decoration: none;
   }
 </style>
