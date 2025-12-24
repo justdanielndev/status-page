@@ -27,7 +27,7 @@
                 : undefined}
               href={item.href.replace("$OWNER", config.owner).replace("$REPO", config.repo)}
               target={item.target || "_self"}>
-              {item.title}
+              <b>{item.title}</b>
             </a>
           </li>
         {/each}
