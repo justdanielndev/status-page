@@ -92,7 +92,7 @@
 <footer>
   <p>
     {@html snarkdown(
-      config.i18n.footer.replace(/\$REPO/, `https://github.com/${config.owner}/${config.repo}`)
+      "Made with 🤍 by Zoe (check out [my site](https://isitzoe.dev)!)"
     )}
   </p>
 </footer>
